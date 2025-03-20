@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VCU Admissions Chatbot</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VCU Admissions Chatbot</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    header {
-      background: #601d1d;
-      color: white;
-      padding: 1em;
-      text-align: center;
-    }
+    <!-- Dialogflow Styling Overrides -->
+    <style>
+      df-messenger {
+        --df-messenger-button-titlebar-color: #601d1d;
+        --df-messenger-chat-background-color: #ffffff;
+        --df-messenger-font-color: #000000;
+        --df-messenger-send-icon: #601d1d;
+        --df-messenger-user-message: #f0f0f0;
+      }
+    </style>
+  </head>
 
-    main {
-      padding: 2em;
-      text-align: center;
-    }
+  <body class="bg-gray-100 flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-[#601d1d] text-white p-4 shadow-md">
+      <div class="container mx-auto text-center">
+        <h1 class="text-2xl font-semibold">VCU Admissions Chatbot</h1>
+      </div>
+    </header>
 
-    df-messenger {
-      --df-messenger-button-titlebar-color: #601d1d;
-      --df-messenger-chat-background-color: #fff;
-      --df-messenger-font-color: #000;
-      --df-messenger-send-icon: #601d1d;
-      --df-messenger-user-message: #f0f0f0;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>VCU Admissions Chatbot</h1>
-  </header>
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center">
+      <div class="max-w-md w-full text-center p-6">
+        <p class="text-lg text-gray-800 mb-4">
+          Need help with your VCU application? Ask our virtual assistant!
+        </p>
+        <!-- Dialogflow Messenger -->
+        <df-messenger
+          intent="WELCOME"
+          chat-title="VCU Admissions"
+          agent-id="2bfa88b5-c21b-4337-b7f9-f84a20c5d339"
+          language-code="en"
+        ></df-messenger>
+      </div>
+    </main>
 
-  <main>
-    <p>Need help with your VCU application? Ask our virtual assistant!</p>
-  </main>
+    <!-- Footer -->
+    <footer class="bg-gray-200 text-center p-3 text-sm text-gray-700">
+      &copy; 2025 Virginia Commonwealth University. All rights reserved.
+    </footer>
 
-  <!-- Dialogflow Messenger -->
-  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-  <df-messenger
-    intent="WELCOME"
-    chat-title="VCU Admissions"
-    agent-id="2bfa88b5-c21b-4337-b7f9-f84a20c5d339"
-    language-code="en"
-  ></df-messenger>
-</body>
+    <!-- Dialogflow Script -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  </body>
 </html>
